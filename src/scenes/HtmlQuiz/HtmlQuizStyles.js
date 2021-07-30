@@ -8,8 +8,10 @@ export const MainDiv = styled.div`
   border: 1px solid #ececec;
   padding: 30px;
   padding-right: 80px;
-  box-shadow: 1px 2px #ececec;
   border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+
 `;
 
 

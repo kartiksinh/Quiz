@@ -6,6 +6,7 @@ import Nav from './scenes/Nav/Nav';
 import HtmlQuiz from './scenes/HtmlQuiz/HtmlQuiz';
 import CssQuiz from './scenes/CssQuiz/CssQuiz';
 import JavascriptQuiz from './scenes/JavascriptQuiz/JavascriptQuiz';
+import Result from './scenes/Result/Result';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 
@@ -17,6 +18,7 @@ function App() {
       <div className="App">
         <Nav />
         <Switch>
+          <Route path="/result" component={Result} />
           <Route path="/javascript" component={JavascriptQuiz} />
           <Route path="/css" component={CssQuiz} />
           <Route path="/html" component={HtmlQuiz} />

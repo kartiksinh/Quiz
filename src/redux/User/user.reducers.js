@@ -8,7 +8,7 @@ const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
         case GETUSER:
            return {
-             ...state, count: state.count + 1,
+             ...state, user: state.count + 1,
            };
         case SETUSER:
            return {

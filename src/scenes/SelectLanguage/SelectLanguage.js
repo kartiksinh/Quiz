@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Select } from 'antd';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 const { Option } = Select;
 
 
@@ -36,8 +36,8 @@ function SelectLanguage() {
     }
 
     useEffect(() => {
-      console.log("useEffect");
-
+      console.log("select languauge");
+      getUserDetails();
     }, [])
 
 

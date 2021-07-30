@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import { MainDiv, H2 } from './LoginStyles';
-import { Form, Input, Button, Checkbox } from 'antd';
+import { Form, Input, Button } from 'antd';
 import { getUser, setUser } from '../../redux/User/user.actions';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 
 function Login() {
@@ -36,13 +36,11 @@ function Login() {
 
   useEffect(() => {
     let userInfo = localStorage.getItem('user');
-    console.log(user, "get");
+    // setUsername(userInfo.username);
   }, [])
 
   const onFinish = (values) => {
     const { username, password } = values;
-    console.log(values);
-    // setUserInfo()
     setUsername(username);
     setPassword(password);
     history.push("/select");
@@ -79,7 +77,7 @@ function Login() {
           <Input.Password />
         </Form.Item>
 
-        <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Form.Item wrapperCol={{ offset: 8, span: 12 }}>
 
           <Button type="primary" htmlType="submit">
             Login
