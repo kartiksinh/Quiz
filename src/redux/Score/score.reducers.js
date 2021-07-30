@@ -2,6 +2,7 @@ import { INCREMENT, DECREMENT, RESET } from './score.types';
 
 const INITIAL_STATE = {
     score: 0,
+    route: '',
 };
 
 const scoreReducer = (state = INITIAL_STATE, action) => {
@@ -17,6 +18,10 @@ const scoreReducer = (state = INITIAL_STATE, action) => {
         case RESET:
             return {
                 ...state, score: 0,
+            };
+            case RESET:
+            return {
+                ...state, route: action.payload,
             };
         default: return state;
     }

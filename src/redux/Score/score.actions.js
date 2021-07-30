@@ -1,4 +1,4 @@
-import { INCREMENT, DECREMENT, RESET } from './score.types';
+import { INCREMENT, DECREMENT, RESET, SETROUTE } from './score.types';
 
 export const increment = () => {
     return {
@@ -15,5 +15,13 @@ export const decrement = () => {
 export const reset = () => {
     return {
        type: RESET,
+    };
+};
+
+export const setRoute = (payload) => {
+    console.log("action",payload);
+    return {
+       type: SETROUTE,
+       payload,
     };
 };

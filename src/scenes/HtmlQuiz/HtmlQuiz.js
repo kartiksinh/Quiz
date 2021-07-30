@@ -63,7 +63,7 @@ function HtmlQuiz(props) {
 
   useEffect(() => {
     setAnswer(null)
-    console.log("scorestate",props.score.score)
+    console.log("scorestate",props.score);
   }, [question])
 
   const onChange = e => {

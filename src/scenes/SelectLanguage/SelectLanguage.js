@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { Select } from 'antd';
 import { useHistory } from 'react-router-dom';
-const { Option } = Select;
+import { connect } from 'react-redux';
+import { setRoute } from '../../redux/Score/score.actions';
 
+
+const { Option } = Select;
 
 const getUserDetails = () => {
   let user= localStorage.getItem('user');
@@ -13,13 +16,14 @@ const getUserDetails = () => {
   }
 }
 
-function SelectLanguage() {
+function SelectLanguage(props) {
   const history = useHistory();
 
   const[user, setUser] = useState(getUserDetails());
 
     function onChange(value) {
       history.push(`/${value}`);
+      props.setRoutes(value);
         console.log(`selected ${value}`);
     }
 
@@ -64,5 +68,16 @@ function SelectLanguage() {
         </div>
     );
 }
+const mapStateToProps = (state) => {
+  return {
+    route: state.route,
+  };
+}
 
-export default SelectLanguage;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setRoutes: route => dispatch(setRoute(route)),
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SelectLanguage);
